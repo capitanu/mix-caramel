@@ -4,7 +4,9 @@ defmodule MixCaramel.MixProject do
   def project do
     [
       app: :mix_caramel,
+      name: "Mix Caramel"
       version: "0.1.0",
+      package: package(),
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -16,6 +18,15 @@ defmodule MixCaramel.MixProject do
     [
       extra_applications: [:logger]
     ]
+  end
+
+   defp package do
+    %{
+      licenses: ["Apache-2.0"],
+      maintainers: ["Calin Capitanu"],
+      links: %{"GitHub" => "https://github.com/capitanu/mix-caramel"},
+      files: ["lib", "mix.exs", "README.md", "LICENSE", "src", ".formatter.exs"]
+    }
   end
 
   # Run "mix help deps" to learn about dependencies.
